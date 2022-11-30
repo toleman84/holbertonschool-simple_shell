@@ -1,20 +1,25 @@
 Readme File
 
+-
 --
 
 Repository Description
 
+-
 --
+---
 
 General
 
+-
 
 --
 
 Compilation
-Your shell will be compiled this way:
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+- Your shell will be compiled this way:
+
+	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 
 --
@@ -62,21 +67,21 @@ Examples
 	(Eshell) $ ls
 	AUTHORS  execmd.c  get_location.c  hsh  main.c  main.h  man_1_simple_shell  README.md
 
--
+ 
 
 	echo [SHORT-OPTION]... [STRING]... - display a line of text.
 
 	(Eshell) $ echo Hello World
 	Hello World
 
--
+ 
 
 	pwd [OPTION]... - print name of current/working directory.
 
 	(Eshell) $ pwd
 	/holbertonschool-simple_shell
 
--
+ 
 
 	Ctrl + D [OPTIONS..] - exit the program.
 
