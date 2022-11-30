@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * main - 
- * @ac:
- * @argv:
+ * main - Short description.
+ * @ac: first member.
+ * @argv: second member.
  *
- * Return:
+ * Return: Always
  */
 
 int main(int ac, char **argv)
