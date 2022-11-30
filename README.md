@@ -18,10 +18,16 @@ Your shell should work like this in interactive mode:
 
 $ ./hsh
 (Eshell) $ /bin/ls
+
 hsh main.c shell.c
+
 (Eshell) $
+
 (Eshell) $ exit
+
 $
+
+
 But also in non-interactive mode:
 
 $ echo "/bin/ls" | ./hsh
