@@ -4,6 +4,7 @@
 	-task
 		archivo main.c 			exede de las 40 líneas			arreglar
 		archivo get_location.c		exede de las 40 líneas			arreglar
+		funciones auxiliares	definir funciones que no esta en la lista	estoy en eso (gustavo)
         --------------------------------------
 	-task 0
 		manual 									terminar
