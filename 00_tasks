@@ -18,7 +18,7 @@
 	-task 2
 		prompt 									hecho
 		prompt mostrar luego de un nuevo comando				(se sale el programa)
-		líneas de comando son simples						hecho ?
+		líneas de comando simples						hecho ?
 		líneas de comando de una sola palabra					hecho
 		Si no se encuentra un ejecutable, imprimir error y mostrar el prompt	hecho
 		Handle errors								revisar
@@ -28,8 +28,8 @@
 		Handle command lines with arguments					terminada!
         --------------------------------------
 	-task 4
-		Handle the PATH								
-		fork must not be called if the command doesn’t exist
+		Handle the PATH								realizar
+		fork must not be called if the command doesn’t exist			realizar
         --------------------------------------
 	-task 5
 		Implement the exit built-in						realizar
