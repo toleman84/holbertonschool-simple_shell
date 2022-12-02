@@ -13,4 +13,9 @@ ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void execmd(char **argv);
 char *get_location(char *command);
 
+char *_strcpy(char *dest, char *src);
+char *_strdup(char *str);
+char *_strcat(char *dest, char *src);
+unsigned int _strlen(char *s);
+
 #endif

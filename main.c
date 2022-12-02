@@ -16,14 +16,12 @@ int main(int ac, char **argv)
 	ssize_t nchars_read;
 	const char *delim = " \n";
 	int num_tokens = 0;
-	char *token;
 	int i;
+	char *token;
 
-	/* declaring void variables - se declara de esta manera al no utilizarse */
-	(void)ac;
+	(void)ac; /* declaring void variables */
 
-	/* create a infinte loop of prompt */
-	while (1)
+	while (1) /* create a infinite loopt of prompt */
 	{
 		printf("%s", prompt);
 		nchars_read = getline(&lineptr, &n, stdin);
@@ -41,8 +39,7 @@ int main(int ac, char **argv)
 			perror("tsh: memory allocation error");
 			return (-1);
 		}
-		/* copy lineptr to lineptr_copy */
-		strcpy(lineptr_copy, lineptr);
+		_strcpy(lineptr_copy, lineptr); /*copy lineptr - lineptr_copy*/
 
 		/*** split the string (lineptr) into an array of words ***/
 		/* calculate the total number of tokens */
@@ -58,23 +55,19 @@ int main(int ac, char **argv)
 		/* allocate space to hold the array of strings */
 		argv = malloc(sizeof(char *) * num_tokens);
 
-		/* store each token in the argv array */
-		token = strtok(lineptr_copy, delim);
+		token = strtok(lineptr_copy, delim); /* store token in the argv array */
 
 		for (i = 0; token != NULL; i++)
 		{
-			argv[i] = malloc(sizeof(char) * strlen(token));
-			strcpy(argv[i], token);
+			argv[i] = malloc(sizeof(char) * _strlen(token));
+			_strcpy(argv[i], token);
 
 			token = strtok(NULL, delim);
 		}
 		argv[i] = NULL;
 
-		/* execute the command */
-		execmd(argv);
+		execmd(argv); /* execute the command */
 	}
-/*	printf("%s\n", lineptr); */
-
 	/* free up allocated memory */
 	free(lineptr_copy);
 	free(lineptr);
