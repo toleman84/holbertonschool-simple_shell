@@ -63,35 +63,38 @@ char *_strdup(char *str)
  * Return: Pointer to the resulting string.
  */
 
-char *_strcat(char *dest, char *src)
+char *_strcat(char *dest, const char *src)
 {
-	char *temp = dest;
+	char *destTemp;
+	const char *srcTemp;
 
-	while (*dest)
-		dest++;
+	destTemp = dest;
+	srcTemp =  src;
 
-	*dest++ = '/';
+	while (*destTemp != '\0')
+		destTemp++;
 
-	while (*src)
-		*dest++ = *src++;
-
-	return (temp);
+	while (*srcTemp != '\0')
+		*destTemp++ = *srcTemp++;
+	*destTemp = '\0';
+	return (dest);
 }
 
 /**
- * _strlen - Function that finds the length of the string.
- * @s: input string.
+ * _strlen - returns the length of a string.
+ * @s: pointer to the characters string.
  *
- * Return: Length of the string.
+ * Return: Length of the character string.
  */
 
-unsigned int _strlen(char *s)
+int _strlen(const char *s)
 {
-	unsigned int len = 0;
+	int length = 0;
 
-	while (s[len])
-		len++;
-
-	return (len);
+	if (!s)
+		return (length);
+	for (length = 0; s[length]; length++)
+		;
+	return (length);
 }
 

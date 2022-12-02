@@ -20,20 +20,17 @@ int main(int ac, char **argv)
 	char *token;
 
 	(void)ac; /* declaring void variables */
-
 	while (1) /* create a infinite loopt of prompt */
 	{
 		printf("%s", prompt);
 		nchars_read = getline(&lineptr, &n, stdin);
-		/* check if the getline function failed or reached EOF or user use CTRL+D */
-		if (nchars_read == -1)
+		if (nchars_read == -1) /* check if the getline function failed or reached EOF or user use CTRL+D */
 		{
 			printf("Exiting shell....\n");
 			return (-1);
 		}
 
-		/* allocate space for a copy of the lineptr */
-		lineptr_copy = malloc(sizeof(char) * nchars_read);
+		lineptr_copy = malloc(sizeof(char) * nchars_read); /* allocate space for a copy of the lineptr */
 		if (lineptr_copy == NULL)
 		{
 			perror("tsh: memory allocation error");
@@ -51,10 +48,7 @@ int main(int ac, char **argv)
 			token = strtok(NULL, delim);
 		}
 		num_tokens++;
-
-		/* allocate space to hold the array of strings */
-		argv = malloc(sizeof(char *) * num_tokens);
-
+		argv = malloc(sizeof(char *) * num_tokens); /* allocate space to hold the array of strings */
 		token = strtok(lineptr_copy, delim); /* store token in the argv array */
 
 		for (i = 0; token != NULL; i++)
@@ -65,11 +59,9 @@ int main(int ac, char **argv)
 			token = strtok(NULL, delim);
 		}
 		argv[i] = NULL;
-
 		execmd(argv); /* execute the command */
 	}
-	/* free up allocated memory */
-	free(lineptr_copy);
+	free(lineptr_copy); /* free up allocated memory */
 	free(lineptr);
 
 	return (0);

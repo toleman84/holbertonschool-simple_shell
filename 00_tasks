@@ -4,7 +4,7 @@
 											task status
 	-task
 		archivo main.c 			exede de las 40 líneas			arreglar
-		archivo get_location.c		exede de las 40 líneas			arreglar
+		archivo get_location.c		exede de las 40 líneas			hecho
 		funciones auxiliares	definir funciones que no esta en la lista	hecho
         --------------------------------------
 	-task 0
