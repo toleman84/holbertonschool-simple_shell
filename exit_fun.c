@@ -1,10 +1,15 @@
 #include "main.h"
 
 /**
-* exit_fun - Builtin function that exits from shell
-* Return: 0
-*/
-int exit_fun(void)
+ * exit_func - Builtin function that exits from shell
+ * @args: first member.
+ *
+ * Return: 0
+ */
+
+int exit_func(char **args)
 {
-	exit(0);
+	(void)args;
+
+	return (0);
 }
