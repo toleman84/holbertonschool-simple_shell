@@ -1,0 +1,40 @@
+
+	tareas pendientes
+	´´´´´´´´´´´´´´´´´´
+											task status
+	-task
+		función lsh_read_line(void) 	exede de las 40 líneas			arreglar	
+		funciones auxiliares		realizar strcmp				realizar
+		función char **lsh_split_line(char *line)	tiene fallas		compilar el return
+        --------------------------------------
+	-task 0
+		manual 									terminar
+		authors 								terminado
+		README 									terminado
+	--------------------------------------
+	-task 1
+		revisar betty al final!
+        --------------------------------------
+	-task 2
+		prompt 									hecho
+		prompt mostrar luego de un nuevo comando				hecho
+		líneas de comando simples						hecho
+		líneas de comando de una sola palabra					hecho
+		Si no se encuentra un ejecutable, imprimir error y mostrar el prompt	hecho
+		Handle errors								revisar
+		“end of file” condition (Ctrl+D)					FLOODEA
+        --------------------------------------
+	-task 3
+		Handle command lines with arguments					terminada!
+        --------------------------------------
+	-task 4
+		Handle the PATH								realizar
+		fork must not be called if the command doesn’t exist			realizar
+        --------------------------------------
+	-task 5
+		Implement the exit built-in						hecho
+        --------------------------------------
+	-task 6
+		Implement the env built-in, that prints the current environment		realizar ?
+
+-- FINISH --
