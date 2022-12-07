@@ -13,7 +13,7 @@
 
 	/* prototypes */
 
-int lsh_num_builtins();
+int lsh_num_builtins(void);
 int lsh_launch(char **args);
 int lsh_execute(char **args);
 char *lsh_read_line(void);
