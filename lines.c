@@ -15,9 +15,7 @@ char *lsh_read_line(void)
 	if (getline(&line, &bufsize, stdin) == -1)
 	{
 		if (feof(stdin))
-		{
 			exit(EXIT_SUCCESS); /* we received an EOF */
-		}
 		else
 		{
 			perror("lsh: getline\n");
@@ -37,13 +35,9 @@ char *lsh_read_line(void)
 	}
 	while (1)
 	{
-		/* read a character */
 		c = getchar();
-
 		if (c == EOF)
-		{
 			exit(EXIT_SUCCESS);
-		}
 		else if (c == '\n')
 		{
 			buffer[position] = '\0';
@@ -51,20 +45,7 @@ char *lsh_read_line(void)
 		}
 		else
 			buffer[position] = c;
-
 		position++;
-
-		/* if we have exceeded the buffer, reallocate */
-/*		if (position >= bufsize)
-		{
-			bufsize += LSH_RL_BUFSIZE;
-			buffer = realloc(buffer, bufsize);
-			if (!buffer)
-			{
-				fprintf(stderr, "lsh: allocation error\n");
-				exit(EXIT_FAILURE);
-			}
-		}*/
 	}
 #endif
 }
@@ -72,15 +53,16 @@ char *lsh_read_line(void)
 #define LSH_TOK_DELIM " \t\r\n\a"
 
 /**
+ * lsh_split_line - short description
+ * @line: first member
  *
- *
- *
+ * Return: tokens
  */
 
 char **lsh_split_line(char *line)
 {
 	int bufsize = LSH_TOK_BUFSIZE, position = 0;
-	char **tokens = malloc(bufsize * sizeof(char*));
+	char **tokens = malloc(bufsize * sizeof(char *));
 	char *token; /***tokens_backup*/
 
 	if (!tokens)
@@ -94,21 +76,6 @@ char **lsh_split_line(char *line)
 	{
 		tokens[position] = token;
 		position++;
-
-/*		if (position >= bufsize)
-		{
-			bufsize += LSH_TOK_BUFSIZE;
-			tokens_backup = tokens;
-			tokens = realloc(tokens, bufsize * sizeof(char*));
-
-			if (!tokens)
-			{
-				free(tokens_backup);
-			fprintf(stderr, "lsh: allocation error\n");
-			exit(EXIT_FAILURE);
-			}
-		}*/
-
 		token = strtok(NULL, LSH_TOK_DELIM);
 	}
 	tokens[position] = NULL;
