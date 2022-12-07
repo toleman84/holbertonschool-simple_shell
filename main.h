@@ -28,9 +28,6 @@ char *_strdup(char *str);
 char *_strcat(char *dest, const char *src);
 int _strlen(const char *s);
 
-/* exit func */
-
-int exit_func(char **args);
 
 
 #endif
