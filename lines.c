@@ -68,7 +68,6 @@ char *lsh_read_line(void)
 	}
 #endif
 }
-
 #define LSH_TOK_BUFSIZE 64
 #define LSH_TOK_DELIM " \t\r\n\a"
 
@@ -109,7 +108,7 @@ char **lsh_split_line(char *line)
 			exit(EXIT_FAILURE);
 			}
 		}*/
-	
+
 		token = strtok(NULL, LSH_TOK_DELIM);
 	}
 	tokens[position] = NULL;
