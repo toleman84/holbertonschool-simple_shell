@@ -31,9 +31,9 @@ int lsh_launch(char **args)
 	{
 		/* parent process */
 		do
-		{
+
 			waitpid(pid, &status, WUNTRACED);
-		}
+
 		while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 	return (1);
