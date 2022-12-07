@@ -2,25 +2,34 @@
 
 /* list of built-in commands, followed by their corresponding functions */
 
-char *builtin_str[] = {
-        "cd",
-        "help",
-        "exit"
+char (*builtin_str[]) = {
+	"cd",
+	"help",
+	"exit"
 };
 
 int (*builtin_func[]) (char **) = {
-        &lsh_cd,
-        &lsh_help,
-        &lsh_exit
+	&lsh_cd,
+	&lsh_help,
+	&lsh_exit
 };
 
-int lsh_num_builtins(void) {
-  return sizeof(builtin_str) / sizeof(char *);
+/**
+ * lsh_num_builtins - Short description.
+ *
+ * Return: Always
+ */
+
+int lsh_num_builtins(void)
+{
+	return (sizeof(builtin_str) / sizeof(char *));
 }
 
 /**
+ * lsh_cd - Short desciption
+ * @args: first member.
  *
- *
+ * Return: Always
  */
 
 int lsh_cd(char **args)
@@ -40,8 +49,10 @@ int lsh_cd(char **args)
 }
 
 /**
+ * lsh_help - Short description
+ * @args: first member
  *
- *
+ * Return: Always
  */
 
 int lsh_help(char **args)
@@ -63,8 +74,10 @@ int lsh_help(char **args)
 }
 
 /**
+ * lsh_exit - Short desciption
+ * @args: first member.
  *
- *
+ * Return: Always 0 (success)
  */
 
 int lsh_exit(char **args)
@@ -93,7 +106,7 @@ int lsh_execute(char **args)
 	for (i = 0; i < lsh_num_builtins(); i++)
 	{
 		if (_strcmp(args[0], builtin_str[i]) == 0)
-			return (*builtin_func[i])(args);
+			return ((*builtin_func[i])(args));
 	}
 	return (lsh_launch(args));
 }

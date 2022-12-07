@@ -11,8 +11,7 @@ void lsh_loop(void)
 	char **args;
 	int status;
 
-	do
-	{
+	do {
 		printf("(Eshell) $ ");
 		line = lsh_read_line();
 		args = lsh_split_line(line);
@@ -20,8 +19,7 @@ void lsh_loop(void)
 
 		free(line);
 		free(args);
-	}
-	while (status);
+	} while (status);
 }
 
 
