@@ -18,6 +18,7 @@ int main(int ac, char **argv)
 	int num_tokens = 0;
 	int i;
 	char *token;
+	
 
 	(void)ac; /* declaring void variables */
 	while (1) /* create a infinite loopt of prompt */
