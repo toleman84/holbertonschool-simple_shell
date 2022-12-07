@@ -20,7 +20,7 @@ char *lsh_read_line(void);
 char **lsh_split_line(char *line);
 void lsh_loop(void);
 int main(int argc, char **argv);
-
+int _strcmp(char *s1, char *s2);
 
 	/* functions declarations for built-in shell commands */
 
