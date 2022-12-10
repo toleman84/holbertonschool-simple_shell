@@ -7,9 +7,12 @@ hsh \- explanation ...
 
 .SH SYNOPSIS
 
+Simple Shell program made for holbertonschool.
+
 .SH DESCRIPTION
 
-.SH OVERVIEW
+The simple_shell is a simpler shell based program which is managed from the interface by entering commands,
+then said program reads compiles and executes said commands seeing the result in a standard output.
 
 .SH INVOCATION
 .br
@@ -97,6 +100,24 @@ Hello World
 .LP
 exit
 .LP
+
+.SH BUILTINS LISTS.C
+_
+_strcmp - compare two strings.
+-
+execute.c - list of built-in commands to execute.
+-
+launch.c - launch a program an wait for it to terminate.
+-
+lines.c - read line of input from stdin divides and tokenizes them.
+-
+main.c - loop prompt and arguments.
+-
+
+.SH RETURN VALUE
+.B
+If the program succed the return value is 0.
+If any problem happens return and error message.
 
 .SH BUGS
 
