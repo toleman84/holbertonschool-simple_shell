@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * main - Short description.
+ * main - Main program.
  * @ac: fisrt member.
- * @argv: second member.
+ * @argv: Arguments.
  *
  * Return: Always 0 (success)
  */
