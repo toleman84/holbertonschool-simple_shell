@@ -3,7 +3,6 @@
 /**
  * struct builtin - Short description.
  *
- *
  */
 
 struct builtin builtins[] = {
