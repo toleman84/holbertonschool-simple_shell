@@ -1,6 +1,8 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+/* libraries */
+
 #include <errno.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -11,6 +13,8 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+
+/* prototypes */
 
 int main(int ac, char **argv);
 void execmd(char **argv);
