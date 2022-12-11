@@ -56,7 +56,7 @@ To exit the simple_shell program, type in:
     •	And memory errors are more sensitive situations and must be solved in a short time.
     Because a lack of memory allocation size can generate a loss of information,linked to the use of uninitialized memory or Reading/Writing memory after it has been freed or Reading/Writing off the end of malloc used. (https://en.wikipedia.org/wiki/Valgrind).
 
-## How to install valgind  
+## How to install Valgind  
 
 
     sudo apt install valgind
