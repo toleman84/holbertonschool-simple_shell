@@ -35,6 +35,7 @@ void execmd(char **argv)
 	pid_t pid;
 	int status;
 	int i;
+	extern char** environ;
 
 	for (i = 0; i < num_builtins(); i++)
 	{
@@ -55,7 +56,7 @@ void execmd(char **argv)
 			/* generate path to command before to execve */
 			actual_command = get_location(command);
 			/* execute the actual command with execve */
-			if (execve(actual_command, argv, NULL))
+			if (execve(actual_command, argv, environ))
 				perror("Error: -1 ");
 		}
 	}
@@ -63,9 +64,9 @@ void execmd(char **argv)
 		perror("Eshell <0 ");
 	else
 	{
-		do
+		do{
 			waitpid(pid, &status, WUNTRACED);
-
+		}
 		while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 
