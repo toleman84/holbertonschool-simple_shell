@@ -4,7 +4,7 @@
  * get_location - function that gets the location of the command.
  * @command: command to locate.
  *
- * Return: command, concatenated and path environment.
+ * Return: command, concatenated and path environment
  */
 
 char *get_location(char *command)
