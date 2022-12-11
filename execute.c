@@ -27,7 +27,7 @@ int lsh_num_builtins(void)
 
 /**
  * lsh_cd - Short desciption
- * @args: first member.
+ * @argv: first member.
  *
  * Return: Always
  */
@@ -50,7 +50,7 @@ int lsh_cd(char **argv)
 
 /**
  * lsh_help - Short description
- * @args: first member
+ * @argv: first member
  *
  * Return: Always
  */
@@ -75,7 +75,7 @@ int lsh_help(char **argv)
 
 /**
  * lsh_exit - Short desciption
- * @args: first member.
+ * @argv: first member.
  *
  * Return: Always 0 (success)
  */
@@ -89,7 +89,7 @@ int lsh_exit(char **argv)
 
 /**
  * lsh_execute - execute shell built-in or launch program
- * @args: Null terminated list of arguments.
+ * @argv: Null terminated list of arguments.
  *
  * Return: 1 of the shell should continue running, 0 if it should terminated.
  */
