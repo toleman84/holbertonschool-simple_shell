@@ -32,7 +32,7 @@ int main(int ac, char **argv)
 			perror("Eshell: memory allocation error");
 			return (-1);
 		}
-		strcpy(lineptr_copy, lineptr);
+		_strcpy(lineptr_copy, lineptr);
 		token = strtok(lineptr, delim);
 		while (token != NULL)
 			num_tokens++, token = strtok(NULL, delim);
@@ -42,7 +42,7 @@ int main(int ac, char **argv)
 		for (i = 0; token != NULL; i++)
 		{
 			argv[i] = malloc(sizeof(char) * strlen(token));
-			strcpy(argv[i], token);
+			_strcpy(argv[i], token);
 			token = strtok(NULL, delim);
 		}
 		argv[i] = NULL, execmd(argv);
