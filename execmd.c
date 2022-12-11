@@ -38,7 +38,7 @@ void execmd(char **argv)
 
 	for (i = 0; i < num_builtins(); i++)
 	{
-		if (strcmp(argv[0], builtins[i].name) == 0)
+		if (_strcmp(argv[0], builtins[i].name) == 0)
 		{
 			builtins[i].func(argv);
 			return;
