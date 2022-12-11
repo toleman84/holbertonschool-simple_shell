@@ -4,7 +4,7 @@
  * __exit - Function to exit the shell
  * @argv: arguments that have been passed (void)
  *
- * Return: 0 if success.
+ * Return: 0 if success
  */
 
 void __exit(char **argv)
