@@ -20,7 +20,7 @@ then said program reads compiles and executes said commands seeing the result in
 .RS
 \&> ./hsh
 
-The prompt '(Eshell) $'
+The prompt '(Eshell) $ '
 The message ' ' will appear in the terminal.
 You can enter commands by following the prompt.
 It is not allowed to use multiple commands at the same time, using ';' '&&' '||' specifiers.
