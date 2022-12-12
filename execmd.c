@@ -7,44 +7,20 @@
  */
 
 struct builtin builtins[] = {
-        {"exit", __exit},
-        {"cd", _cd},
-        {"help", _help}
-};
-
-/**
- * builtin_builtins - function for built-in functions
- * @argv: arguments that have bee passed.
- *
- */
-/*
-void builtin_builtins(char **argv)
-{
-struct builtin builtins[] = {
 	{"exit", __exit},
 	{"cd", _cd},
 	{"help", _help}
 };
-	int i;
 
-	for (i = 0; i < num_builtins(); i++)
-	{
-		if (strcmp(argv[0], builtins[i].name) == 0)
-		{
-			builtins[i].func(argv);
-			return;
-		}
-	}
-}
-*/
 /**
  * num_builtins - Short description.
  *
  * Return: sizeof builtins and struct builtin.
  */
 
-int num_builtins()
+int num_builtins(void)
 {
+
 	return (sizeof(builtins) / sizeof(struct builtin));
 }
 
@@ -88,11 +64,9 @@ void execmd(char **argv)
 		perror("Eshell <0 ");
 	else
 	{
-		do {
+		do
 			waitpid(pid, &status, WUNTRACED);
-		}
 		while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
-
 }
 
