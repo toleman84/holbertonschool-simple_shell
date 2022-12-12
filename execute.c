@@ -84,7 +84,7 @@ int lsh_exit(char **argv)
 {
 	(void)argv;
 
-	return (0);
+	exit(0);
 }
 
 /**

@@ -34,6 +34,17 @@ int lsh_cd(char **argv);
 int lsh_help(char **argv);
 int lsh_exit(char **argv);
 
+	/* Own functions */
+
+int _strcmp(char *s1, char *s2);
+char *_strdup(char *str);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
+unsigned int _strlen(char *s);
+
+
+	/* environ */
+
 extern char** environ;
 
 #endif
