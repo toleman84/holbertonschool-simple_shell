@@ -34,5 +34,6 @@ int lsh_cd(char **argv);
 int lsh_help(char **argv);
 int lsh_exit(char **argv);
 
+extern char** environ;
 
 #endif
