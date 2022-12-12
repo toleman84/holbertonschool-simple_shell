@@ -30,17 +30,5 @@ int lsh_cd(char **argv);
 int lsh_help(char **argv);
 int lsh_exit(char **argv);
 
-/*
-typedef struct aliases {
-	char *alias_name;
-	char *real_name;
-} alias;
 
-alias my_aliases[] = {
-	{"ls", "ls --color=auto"},
-	{"ll", "ls -alf"},
-	{"la", "ls -A"},
-	{"NULL", "NULL"}
-};
-*/
 #endif
