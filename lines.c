@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * lsh_read_line - read line of input from stdin
+ * lsh_read_line - read line of input from stdin.
  *
  * Return: the line from stdin.
  */
