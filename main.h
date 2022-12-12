@@ -1,6 +1,7 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+
 	/* libraries */
 
 #include <sys/wait.h>
@@ -23,6 +24,7 @@ void lsh_loop(void);
 int main(int argc, char **argv);
 int _strcmp(char *s1, char *s2);
 int lsh_aliases(void);
+
 
 	/* functions declarations for built-in shell commands */
 
