@@ -25,6 +25,8 @@ int main(int argc, char **argv);
 int _strcmp(char *s1, char *s2);
 int lsh_aliases(void);
 
+char *get_location(char *command);
+
 
 	/* functions declarations for built-in shell commands */
 

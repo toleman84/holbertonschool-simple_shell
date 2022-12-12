@@ -21,6 +21,7 @@ void lsh_loop(void)
 		free(argv);
 
 	} while (status);
+	free(line);
 }
 
 

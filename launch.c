@@ -9,9 +9,9 @@
 
 int lsh_launch(char **argv)
 {
+	char *command = NULL, *actual_command = NULL;
 	pid_t pid;
 	int status;
-	char *command = NULL;
 
 	pid = fork();
 	if (pid == 0)
@@ -20,7 +20,9 @@ int lsh_launch(char **argv)
 		{
 			command = argv[0];
 			/* child process */
-			if (execvp(command, argv) == -1)
+			actual_command = get_location(command);
+
+			if (execve(actual_command, argv, NULL) == -1)
 				perror("Error: - 1");
 
 			exit(EXIT_FAILURE);
