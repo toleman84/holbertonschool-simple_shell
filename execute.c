@@ -17,7 +17,7 @@ int (*builtin_func[]) (char **) = {
 /**
  * lsh_num_builtins - Short description.
  *
- * Return: Always
+ * Return: Always.
  */
 
 int lsh_num_builtins(void)
