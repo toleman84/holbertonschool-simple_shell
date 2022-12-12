@@ -2,10 +2,10 @@
 
 /**
  * lsh_launch - launch a program an wait for it terminate.
- * @args: null terminated list of arguments.
+ * @argv: null terminated list of arguments.
  *
  * Return: Always 1, to continue execution.
- */ 
+ */
 
 int lsh_launch(char **argv)
 {
@@ -22,7 +22,7 @@ int lsh_launch(char **argv)
 			/* child process */
 			if (execvp(command, argv) == -1)
 				perror("Error: - 1");
-		
+
 			exit(EXIT_FAILURE);
 		}
 	}
