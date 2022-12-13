@@ -26,6 +26,7 @@ char *lsh_read_line(void)
 #define LSH_RL_BUFSIZE 1024
 	int bufsize = LSH_RL_BUFSIZE, position = 0, c;
 	char *buffer = malloc(sizeof(char) * bufsize);
+
 	if (!buffer)
 	{
 		free(buffer);
