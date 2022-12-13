@@ -26,7 +26,6 @@ You can enter commands by following the prompt.
 It is not allowed to use multiple commands at the same time, using ';' '&&' '||' specifiers.
 To execute the commands enter them and finish by pressing the 'ENTER' key.
 
-.SH FEATURES
 
 .SH EXAMPLES - BUILDING COMMANDS
 
@@ -103,9 +102,12 @@ exit
 
 .SH BUILTINS LISTS.C
 _
-_strcmp - compare two strings.
--
+
 execute.c - list of built-in commands to execute.
+-
+functions.c - Our own functions.
+-
+get_location.c - function that takes the command and returns the path.
 -
 launch.c - launch a program an wait for it to terminate.
 -

@@ -5,19 +5,19 @@
 char (*builtin_str[]) = {
 	"cd",
 	"help",
-	"exit"
+	"exit",
 };
 
 int (*builtin_func[]) (char **) = {
 	&lsh_cd,
 	&lsh_help,
-	&lsh_exit
+	&lsh_exit,
 };
 
 /**
  * lsh_num_builtins - Short description.
  *
- * Return: Always.
+ * Return: Size of
  */
 
 int lsh_num_builtins(void)
@@ -27,9 +27,9 @@ int lsh_num_builtins(void)
 
 /**
  * lsh_cd - Short desciption
- * @argv: first member.
+ * @argv: Null terminated list of arguments
  *
- * Return: Always
+ * Return: 1
  */
 
 int lsh_cd(char **argv)
@@ -49,10 +49,10 @@ int lsh_cd(char **argv)
 }
 
 /**
- * lsh_help - Short description
- * @argv: first member
+ * lsh_help - Command function help
+ * @argv: Null terminated list of arguments
  *
- * Return: Always
+ * Return: 1
  */
 
 int lsh_help(char **argv)
@@ -61,21 +61,21 @@ int lsh_help(char **argv)
 
 	(void)argv;
 
-	printf("Eshell\n");
-	printf("type program names and arguments and hit enter.\n");
-	printf("the following are built in:\n");
+	printf("  Eshell\n");
+	printf("  type program names and arguments and hit enter.\n");
+	printf("  the following are built in:\n");
 
 	for (i = 0; i < lsh_num_builtins(); i++)
 	{
-		printf(" %s\n", builtin_str[i]);
+		printf("     %s\n", builtin_str[i]);
 	}
-	printf("use the man command for information on other programs.\n");
+	printf("  use the man command for information on other programs.\n");
 	return (1);
 }
 
 /**
- * lsh_exit - Short desciption
- * @argv: first member.
+ * lsh_exit - Command function exit.
+ * @argv: Null terminated list of arguments.
  *
  * Return: Always 0 (success)
  */
@@ -83,7 +83,7 @@ int lsh_help(char **argv)
 int lsh_exit(char **argv)
 {
 	(void)argv;
-
+	printf("Exiting Eshell ...\n");
 	exit(0);
 }
 

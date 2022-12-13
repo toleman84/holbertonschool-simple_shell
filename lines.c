@@ -14,8 +14,8 @@ char *lsh_read_line(void)
 
 	if (getline(&line, &bufsize, stdin) == -1)
 	{
-		if (fstat(stdin))
-			exit(EXIT_SUCCESS); /* we received an EOF */
+		if (fstat(stdin)) /* we received an EOF */
+			exit(EXIT_SUCCESS);
 		else
 		{
 			perror("Eshell: getline\n"), exit(EXIT_FAILURE);
@@ -26,16 +26,16 @@ char *lsh_read_line(void)
 #define LSH_RL_BUFSIZE 1024
 	int bufsize = LSH_RL_BUFSIZE, position = 0, c;
 	char *buffer = malloc(sizeof(char) * bufsize);
-
 	if (!buffer)
 	{
+		free(buffer);
 		printf("Eshell: allocation error\n"), exit(EXIT_FAILURE);
 	}
 	while (1)
 	{
 		c = getchar();
 		if (c == EOF)
-			exit(EXIT_SUCCESS);
+			printf("Exiting Eshell ...\n"), exit(EXIT_SUCCESS);
 		else if (c == '\n')
 		{
 			buffer[position] = '\0';
@@ -51,8 +51,8 @@ char *lsh_read_line(void)
 #define LSH_TOK_DELIM " \t\r\n\a"
 
 /**
- * lsh_split_line - short description
- * @line: first member
+ * lsh_split_line - Function that split line.
+ * @line: Lines to split.
  *
  * Return: tokens
  */

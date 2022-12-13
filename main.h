@@ -34,6 +34,7 @@ int lsh_cd(char **argv);
 int lsh_help(char **argv);
 int lsh_exit(char **argv);
 
+
 	/* Own functions */
 
 int _strcmp(char *s1, char *s2);
