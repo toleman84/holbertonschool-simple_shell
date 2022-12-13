@@ -12,7 +12,9 @@ void lsh_loop(void)
 	int status;
 
 	do {
-		printf("(Eshell) $ ");
+		if (isatty(STDIN_FILENO))
+			printf("(Eshell) $ ");
+
 		line = lsh_read_line();
 		argv = lsh_split_line(line);
 		status = lsh_execute(argv);

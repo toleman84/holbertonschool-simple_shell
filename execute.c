@@ -36,7 +36,7 @@ int lsh_cd(char **argv)
 {
 	if (argv[1] == NULL)
 	{
-		printf("Eshell: expected argument to \"cd\"\n");
+		fprintf(stderr, "Eshell: expected argument to \"cd\"\n");
 	}
 	else
 	{
@@ -83,7 +83,6 @@ int lsh_help(char **argv)
 int lsh_exit(char **argv)
 {
 	(void)argv;
-	printf("Exiting Eshell ...\n");
 	exit(0);
 }
 
