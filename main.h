@@ -46,6 +46,6 @@ unsigned int _strlen(char *s);
 
 	/* environ */
 
-extern char** environ;
+extern char **environ;
 
 #endif
