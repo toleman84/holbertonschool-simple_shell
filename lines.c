@@ -36,7 +36,7 @@ char *lsh_read_line(void)
 	{
 		c = getchar();
 		if (c == EOF)
-			printf("Exiting Eshell ...\n"), exit(EXIT_SUCCESS);
+			exit(EXIT_SUCCESS);
 		else if (c == '\n')
 		{
 			buffer[position] = '\0';
