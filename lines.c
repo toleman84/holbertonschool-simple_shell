@@ -8,35 +8,32 @@
 
 char *lsh_read_line(void)
 {
-#ifdef LSH_USE_STD_GETLINE
-	char *line = NULL;
-	ssize_t bufsize = 0; /* have getline allocate a buffer for us */
+	int position = 0, c;
+	char *line = NULL, *buffer = NULL;
+	size_t bufsize = 0;
+	ssize_t nchars_read; /* have getline allocate a buffer for us */
 
-	if (getline(&line, &bufsize, stdin) == -1)
+	nchars_read = getline(&line, &bufsize, stdin);
+	if (nchars_read == -1)
 	{
-		if (fstat(stdin)) /* we received an EOF */
-			exit(EXIT_SUCCESS);
-		else
-		{
-			perror("Eshell: getline\n"), exit(EXIT_FAILURE);
-		}
+		free(line); /* valgrind */
+		printf("Exiting shell ...\n");
+		exit(EXIT_SUCCESS);
 	}
 	return (line);
-#else
-#define LSH_RL_BUFSIZE 1024
-	int bufsize = LSH_RL_BUFSIZE, position = 0, c;
-	char *buffer = malloc(sizeof(char) * bufsize);
 
+/*	int position = 0, c;*/
+	buffer = malloc(sizeof(char) * nchars_read);
 	if (!buffer)
 	{
 		free(buffer);
-		fprintf(stderr, "Eshell: allocation error\n"), exit(EXIT_FAILURE);
+		printf("Eshell: allocation error\n"), exit(EXIT_FAILURE);
 	}
 	while (1)
 	{
 		c = getchar();
 		if (c == EOF)
-			exit(EXIT_SUCCESS);
+			printf("Exiting Eshell ...\n"), exit(EXIT_SUCCESS);
 		else if (c == '\n')
 		{
 			buffer[position] = '\0';
@@ -46,9 +43,9 @@ char *lsh_read_line(void)
 			buffer[position] = c;
 		position++;
 	}
-#endif
+
 }
-#define LSH_TOK_BUFSIZE 64
+/*#define LSH_TOK_BUFSIZE 64*/
 #define LSH_TOK_DELIM " \t\r\n\a"
 
 /**
@@ -60,13 +57,13 @@ char *lsh_read_line(void)
 
 char **lsh_split_line(char *line)
 {
-	int bufsize = LSH_TOK_BUFSIZE, position = 0;
-	char **tokens = malloc(bufsize * sizeof(char *));
+	int position = 0;
+	char **tokens = malloc(64 * sizeof(char *));
 	char *token; /***tokens_backup*/
 
 	if (!tokens)
 	{
-		fprintf(stderr, "Eshell: allocation error\n");
+		printf("Eshell: allocation error\n");
 		exit(EXIT_FAILURE);
 	}
 
