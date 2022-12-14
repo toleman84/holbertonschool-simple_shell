@@ -4,7 +4,7 @@
  * lsh_launch - launch a program an wait for it terminate.
  * @argv: null terminated list of arguments.
  *
- * Return: Always 1, to continue execution.
+ * Return: Always 1, to continue execution
  */
 
 int lsh_launch(char **argv)
