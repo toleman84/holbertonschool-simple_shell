@@ -15,7 +15,7 @@ int (*builtin_func[]) (char **) = {
 };
 
 /**
- * lsh_num_builtins - Short description.
+ * lsh_num_builtins - Short description
  *
  * Return: Size of
  */
