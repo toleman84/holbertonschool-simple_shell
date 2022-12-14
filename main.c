@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * lsh_loop - loop prompt.
+ * lsh_loop - loop prompt
  *
  */
 
