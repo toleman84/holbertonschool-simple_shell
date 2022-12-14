@@ -26,7 +26,7 @@ char *lsh_read_line(void)
 	if (!buffer)
 	{
 		free(buffer);
-		printf("Eshell: allocation error\n"), exit(EXIT_FAILURE);
+		fprintf(stderr, "Eshell: allocation error\n"), exit(EXIT_FAILURE);
 	}
 	while (1)
 	{
@@ -62,7 +62,7 @@ char **lsh_split_line(char *line)
 
 	if (!tokens)
 	{
-		printf("Eshell: allocation error\n");
+		fprintf(stderr, "Eshell: allocation error\n");
 		exit(EXIT_FAILURE);
 	}
 
