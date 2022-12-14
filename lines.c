@@ -3,7 +3,7 @@
 /**
  * lsh_read_line - read line of input from stdin.
  *
- * Return: the line from stdin.
+ * Return: the line from stdin
  */
 
 char *lsh_read_line(void)
