@@ -23,7 +23,7 @@ int lsh_launch(char **argv)
 			actual_command = get_location(command);
 
 			if (execve(actual_command, argv, environ) == -1)
-				perror("Error: - 1");
+				perror(" -1 ");
 
 			exit(EXIT_FAILURE);
 		}
@@ -31,7 +31,7 @@ int lsh_launch(char **argv)
 	else if (pid < 0)
 	{
 		/* error forking */
-		perror("Error: < 0");
+		perror(" < 0 ");
 	}
 	else
 	{
